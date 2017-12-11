@@ -1,0 +1,1 @@
+## To open the app run npm watch and open your browser to localhost:8080;  There will be a subject input and a content input.  Fill them in and hit submit.  Notes will appear below.  To delete a note just click the delete button below it.
