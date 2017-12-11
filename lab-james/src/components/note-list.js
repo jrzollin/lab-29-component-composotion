@@ -18,7 +18,7 @@ class NoteList extends React.Component {
 
     const listNotes = notes.map( (note, i) => (
       <li key={i}>
-        <NoteItem note={note} index={notes.indexOf(note)} deleteNote={this.props.deleteNote}/>
+        <NoteItem note={note} index={notes.indexOf(note)} deleteNote={this.props.deleteNote} updateNote={this.props.updateNote}/>
       </li>
     ));
 

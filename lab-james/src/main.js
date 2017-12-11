@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.addNote = this.addNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
+    this.updateNote = this.updateNote.bind(this);
 
     this.state = {
       notes: [],
@@ -22,9 +23,15 @@ class App extends React.Component {
       this.setState({notes: noteArray});
     };
 
-    deleteNote(id){
+    deleteNote(index){
       let noteArray = this.state.notes;
-      noteArray.splice(id, 1);
+      noteArray.splice(index, 1);
+      this.setState({notes: noteArray});
+    }
+
+    updateNote(index, note){
+      let noteArray = this.state.notes;
+      noteArray[index].content = note;
       this.setState({notes: noteArray});
     }
 
@@ -32,7 +39,7 @@ class App extends React.Component {
       return (
         <div>
           <NoteForm addNote={this.addNote}/>
-          <NoteList notes={this.state.notes} deleteNote={this.deleteNote}/>
+          <NoteList notes={this.state.notes} deleteNote={this.deleteNote} updateNote={this.updateNote}/>
         </div>
       )
     }
