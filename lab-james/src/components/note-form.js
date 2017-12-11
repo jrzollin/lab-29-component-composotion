@@ -17,7 +17,6 @@ class NoteForm extends React.Component {
 
   changeState(e){
     this.setState({[e.target.id]: e.target.value});
-    console.log(this.state);
   }
 
   handleSubmit(e){
