@@ -3,6 +3,10 @@ import ReactDom from 'react-dom';
 
 import NoteForm from './components/note-form.js';
 import NoteList from './components/note-list.js';
+import Header from './components/header.js';
+import Footer from './components/footer.js';
+
+import './style/components/header.scss';
 
 class App extends React.Component {
 
@@ -38,8 +42,10 @@ class App extends React.Component {
     render(){
       return (
         <div>
+          <Header />
           <NoteForm addNote={this.addNote}/>
           <NoteList notes={this.state.notes} deleteNote={this.deleteNote} updateNote={this.updateNote}/>
+          <Footer />
         </div>
       )
     }
